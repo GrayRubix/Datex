@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { View, Text, StatusBar, Image } from "react-native";
 import { styles } from '../styles/GlobalStyle';
-import { useSelector } from 'react-redux'
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import { ScrollView } from 'react-native-gesture-handler';
 
 // import {
@@ -27,14 +25,9 @@ const Home = () => {
         };
         axios(config)
             .then(function (response) {
-                console.log('Downloaded! See Data')
-                console.log(JSON.stringify(response.data));
-                let items = response;
-                console.log(items)
-                setData(response.data)
-                console.log(Data, "End")
+                let items = response.data;
+                setData(items)
                 setShow(true)
-                console.log("Show >>> ", show); 
                 // console.log(JSON.stringify(response.data))
             })
             .catch(function (error) {
@@ -43,13 +36,11 @@ const Home = () => {
 
         try {
             dispatch(bourseData(Data));
-            console.log("success");
             setShow(true)
 
         } catch (e) {
             console.log(e)
         }
-        console.log("bourse", Date)
     }, [])
 
 

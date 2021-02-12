@@ -16,11 +16,9 @@ const Splash = (props) => {
 
 
     const addInfo = async (value1, value2) => {
-        console.log("value", value1, value2)
         try {
             dispatch(GetUserName([value1]));
             dispatch(GetPassword([value2]));
-            console.log("success");
 
         } catch (e) {
             console.log(e)
@@ -37,9 +35,8 @@ const Splash = (props) => {
         try {
             const username = await AsyncStorage.getItem("userName")
             const password = await AsyncStorage.getItem("Password")
-            console.log("userInfo is from splash getData>>> ", username, password);
             if (password == null) {
-                console.log("Find!")
+                // Deleted
             } else {
                 addInfo(username, password)
             }

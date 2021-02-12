@@ -27,22 +27,16 @@ const Login = (props) => {
     React.useEffect(() => {
         setUserName(userNameR)
         setPassword(passwordR)
-        console.log("userNameR",userNameR , "passwordR",passwordR)
-        if (userNameR !== []) {
-            console.log("object");
-        }
     }, [])
     const saveLogin = async (value) => {
-        console.log('setData...');
+
         try {
             await AsyncStorage.setItem("userName", (value.userName))
             await AsyncStorage.setItem("Password", (value.password))
-            console.log(value.userName);
             const userName = await AsyncStorage.getItem("userName")
             const Password = await AsyncStorage.getItem("Password")
-            console.log("userInfo is >>> ", userName, Password);
         } catch (e) {
-            console.log("error >>>>", e)
+            console.log("error Login Page 42>>>>", e)
         }
     }
 
@@ -91,7 +85,6 @@ const Login = (props) => {
                         status={rememberMe ? 'checked' : 'unchecked'}
                         onPress={() => {
                             setChecked(!rememberMe)
-                            console.log(rememberMe)
                         }}
                     />
 
