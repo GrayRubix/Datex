@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const fetchbourse = async () => {
+export const fetchbourse = async () => {
     var config = {
         method: 'get',
         url: 'https://data.nadpco.com/v1/BaseInfo/Companies',
