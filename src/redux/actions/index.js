@@ -1,4 +1,22 @@
-import { fetchbourse } from "../../api/bourse";
+import axios from 'axios';
+
+const fetchbourse = async () => {
+    var config = {
+        method: 'get',
+        url: 'https://data.nadpco.com/v1/BaseInfo/Companies',
+    };
+
+    try {
+        const {
+            data: { bourse },
+        } = await axios(config)
+        return bourse.data;
+           
+    }catch(error){
+        console.log(error)
+    }
+}
+
 
 export const getBourse = () => {
     return async (dispatch) => {

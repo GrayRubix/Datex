@@ -48,8 +48,8 @@ export const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderRadius: 5,
         elevation: 8,
-        paddingHorizontal:10
-        
+        paddingHorizontal: 10
+
 
     },
     globalBtn: {
@@ -60,6 +60,27 @@ export const styles = StyleSheet.create({
         alignContent: "center",
         fontSize: 24,
         marginTop: 70,
-    }
+    },
+    cards: {
+        width: "80%",
+        borderRadius: 5,
+        backgroundColor: "#fff",
+        elevation: 10,
+
+    },
+    textLine: {
+        flexDirection: "row",
+
+    },
+    cardTitle:{
+        fontSize:24,
+        color:"black",
+        textAlign:'right'
+    },
+    cardText:{
+        fontSize:18,
+        color:"gray",
+        textAlign:'right'
+    },
 
 })
